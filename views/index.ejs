@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css"/>
+    <title>Fit For You</title>
+</head>
+<body>
+    <header>
+        <h1>Fit For You</h1>
+        <nav>
+            <a href="/users">Trainer Page</a>
+            <br/>
+        </nav>
+    </header>
+    <div>
+        <ul style="list-style-type:none;">
+            <% for (let i=0; i<exercise.length; i++) {%>
+            <li>
+                <a href="/exercise/<%=exercise[i].id%>">
+                    <h2><%= exercise[i].name %></h2>
+                </a>
+                <br/>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</body>
+</html>

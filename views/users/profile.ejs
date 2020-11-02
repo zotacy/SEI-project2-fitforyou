@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css"/>
+    <title>User Profile</title>
+</head>
+<body>
+    <body>
+        <h1><%= user.name %>'s Profile</h1>
+        
+        <!-- Profile info -->
+        <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
+          Name:<input type="text" name="name" value="<%=user.name%>" /><br/>
+          <br/>
+          Username:<input type="text" name="username" value="<%=user.username%>" /><br/>
+          <br/>
+          Password:<input type="text" name="password" value="<%=user.password%>" /><br/>
+          <br/>
+          Bio:<input type="text" name="bio" value="<%=user.bio%>" /><br />
+          <br />
+          <!-- Edit Profile -->
+          <input type="submit" value="Edit Profile" />
+        </form>
+        <br/>
+
+        <!-- Delete Profile -->
+        <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete User" />
+        </form>
+    
+        <br/><br/>
+        <a href="/">Back to Homepage</a>
+</body>
+</html>

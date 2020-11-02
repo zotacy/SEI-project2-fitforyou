@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css"/>
+    <title>Workouts</title>
+</head>
+<body>
+    <h1><%= workout.name %></h1>
+
+    <div id="newEntryScreen">
+        <!-- injecting data -->
+        <h2><%= workout.name %></h2>
+        <br><br>
+    <!-- Submit Button -->
+        <a href="/pokemon/<%=pokemon.id; %>/edit">Edit Workout</a>
+    <!-- Delete Button -->
+        <form action="/pokemon/<%=pokemon.id %>?_method=DELETE" method="POST">
+            <input type="submit" value="DELETE <%= pokemon.name %>" />
+        </form>
+    </div>
+</body>
+</html>
