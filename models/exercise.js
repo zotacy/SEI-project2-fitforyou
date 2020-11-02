@@ -5,9 +5,14 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Exercise extends Model {
     static associate(models) {
-      Exercise.belongsToMany(models.User, {forgeignKey: 'userId'});
-      Exercise.hasMany(models.Workout, {forgeignKey: 'exerciseId'});
-    }
+      Exercise.belongsToMany(models.User, {
+        through: 'UserExercises',
+        foreignKey: 'userId',
+      });
+      Exercise.hasMany(models.Workout, {
+        foreignKey: 'exerciseId'
+      });
+    };
   };
   Exercise.init({
     name: DataTypes.STRING,

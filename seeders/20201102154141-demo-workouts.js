@@ -3,19 +3,14 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
-      "Difficulties",
+      "Workouts",
       [
         {
-          name: "Easy",
-          rating: 1
-        },
-        {
-          name: "Medium",
-          rating: 2
-        },
-        {
-          name: "Hard",
-          rating: 3
+          name: "First Run Workout",
+          exerciseId: "1",
+          difficultyId: "1",
+          workout: "easy run, 30 minutes",
+          notes: "Keep it EASY",
         },
       ],
       {}

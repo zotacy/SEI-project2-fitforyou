@@ -5,11 +5,14 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Workout extends Model {
     static associate(models) {
-      Workout.belongsTo(model.Exercise, {
-        forgeignKey:"exerciseId",
-        forgeignKey:"userId",
+      Workout.belongsTo(models.Exercise, {
+        foreignKey:"exerciseId",
+        foreignKey:"userId",
       });
-      Workout.hasOne(model.Difficulty, {forgeignKey:"difficultyId"});
+      Workout.hasOne(models.Difficulty, {
+        through: "WorkoutDifficulty",
+        foreignKey:"difficultyId"
+      });
     }
   };
   Workout.init({

@@ -9,9 +9,13 @@
 <body>
     <header>
         <h1> Fit For You- Users Page</h1>
+            <form action="/auth/login" method="POST">
+                Username: <input type="text" name="username" /><br/>
+                Password: <input type="text" name="password" /><br/>
+                <input type="submit" value="Login" />
+            </form>
             <nav>
                 <a href="/auth/signup">Sign Up</a>
-                <a href="/auth/login">Log In</a>
                 <a href="/logout">Log Out</a>
             </nav>
     </header>

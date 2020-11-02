@@ -5,8 +5,11 @@ const {
 module.exports = (sequelize, DataTypes) => {
   class Difficulty extends Model {
     static associate(models) {
-      Difficulty.belongsToMany(models.Workout, {forgeignKey: "difficultyId"})
-    }
+      Difficulty.belongsToMany(models.Workout, {
+        through: "WorkoutDifficulty",
+        foreignKey: "difficultyId"
+      });
+    };
   };
   Difficulty.init({
     name: DataTypes.STRING,
