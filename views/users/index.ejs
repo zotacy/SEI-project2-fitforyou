@@ -7,17 +7,23 @@
     <title>User Index Page</title>
 </head>
 <body>
-    <header>
+    <header class='userHome'>
         <h1> Fit For You- Users Page</h1>
-            <form action="/auth/login" method="POST">
-                Username: <input type="text" name="username" /><br/>
-                Password: <input type="text" name="password" /><br/>
-                <input type="submit" value="Login" />
-            </form>
-            <nav>
-                <a href="/auth/signup">Sign Up</a>
-                <a href="/logout">Log Out</a>
-            </nav>
+        <form action="/auth/login" method="POST">
+            Username: <input type="text" name="username" /><br/>
+            Password: <input type="text" name="password" /><br/>
+            <br/>
+            <input type="submit" value="Login"/>
+            <a href="/logout"><button type="button">Log out</button></a>
+        </form>
+        <br/>
+        <nav>
+            <a href="/auth/signup">Sign Up</a>
+        </nav>
     </header>
+
+    <footer>
+        <p id="footer">© 2020 Zach Tacy</p>
+    </footer>
 </body>
 </html>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css"/>
+    <link rel="stylesheet" href="/css/profile.css"/>
     <title>User Profile</title>
 </head>
 <body>
@@ -14,11 +15,11 @@
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
       Name:<input type="text" name="name" value="<%=user.name%>" /><br/>
       Username:<input type="text" name="username" value="<%=user.username%>" /><br/>
-      <!-- Password:<input type="text" name="password" value="<%=user.password%>" /><br/> -->
-      Bio:<input id='bio' type="text" name="bio" value="<%=user.bio%>" /><br />
+      Bio:<input id='bio' class="no-outline" type="text" name="bio" value="<%=user.bio%>" /><br />
       <br />
       <!-- Edit Profile -->
       <input type="submit" value="Edit Profile" />
+
     </form>
 
     <!-- Delete Profile -->
@@ -27,7 +28,67 @@
     </form>
 
     <br/>
-    <a href="/">Back to Homepage</a>
+    <a href="/">Back to Homepage</a><br/>
+    <a href="/logout">Log Out</a>
   </header>
+
+  <main>
+    <div class="exercises">
+        <div class="exerciseBlock">
+          <div class="row">
+          <div class="column">
+              <div class="card">
+                  <a href="https://imgur.com/7z8ah4B" alt="Blue Shoes"><img src="https://i.imgur.com/7z8ah4B.png?1" title="source: imgur.com" /></a>
+                  <h2>Running</h2>
+                  <div class="container">
+                      <p class='diffCount'>Easy:</p>
+                      <p class='diffCount'>Moderate:</p>
+                      <p class='diffCount'>Hard:</p>
+                  </div>
+                  <a class="button" href="/new"><button type="button">Add New Workout</button></a>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="exerciseBlock">
+          <div class="row">
+          <div class="column">
+              <div class="card">
+                  <a href="https://imgur.com/jXWvolq" alt="QR Bike (black)"><img src="https://i.imgur.com/jXWvolq.png?1" title="source: imgur.com" /></a>
+                  <h2>Cycling</h2>
+                  <div class="container">
+                      <p class='diffCount'>Easy:</p>
+                      <p class='diffCount'>Moderate:</p>
+                      <p class='diffCount'>Hard:</p>
+                  </div>
+                  <a class="button" href="/new"><button type="button">Add New Workout</button></a>
+              </div>
+          </div>
+          </div>
+        </div>
+
+        <div class="exerciseBlock">
+          <div class="row">
+          <div class="column">
+              <div class="card">
+                  <a href="https://imgur.com/3vX9a3N" alt="Swimming Pool"><img src="https://i.imgur.com/3vX9a3N.jpg?1" title="source: imgur.com" /></a>
+                  <h2>Swimming</h2>
+                  <div class="container">
+                      <p class='diffCount'>Easy:</p>
+                      <p class='diffCount'>Moderate:</p>
+                      <p class='diffCount'>Hard:</p>
+                  </div>
+                  <a class="button" href="/new"><button type="button">Add New Workout</button></a>
+              </div>
+          </div>
+        </div>
+        </div>
+    </div>
+  </main>
+
+<footer>
+        <p id="footer">© 2020 Zach Tacy</p>
+    </footer>
 </body>
 </html>

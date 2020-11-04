@@ -20,6 +20,9 @@ module.exports = {
       bio: {
         type: Sequelize.STRING
       },
+      loggedIn: {
+        type: Sequelize.BOOLEAN
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

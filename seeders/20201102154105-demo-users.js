@@ -6,10 +6,11 @@ module.exports = {
       "Users",
       [
         {
-          name: "Zach Tacy",
-          username: "zotacy",
-          password: "password",
-          bio: "I am a triathlete! Swim, Bike, Run all the way!",
+          name: "Entrie One",
+          username: "Entry1",
+          password: "Password",
+          bio: "I am the FIRST Entry!",
+          loggedIn: false,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

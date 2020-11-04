@@ -1,0 +1,14 @@
+form{
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+input {
+    border: hidden;
+    background-color: none;
+    font-size: .9em;
+}
+  
+.no-outline:focus {
+    outline: none;
+}
