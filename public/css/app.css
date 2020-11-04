@@ -51,7 +51,7 @@ input[type="submit"]{
     display:grid;
     grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
     padding: 10px;
-    border: 5px solid Blue;
+    /* border: 5px solid Blue; */
 }
 
 *, *:before, *:after {
@@ -71,13 +71,13 @@ box-sizing: inherit;
     text-align: center;
 }
 
-.card a img{
+.card img{
     width:100%;
     height:auto;
 }
 
 h2{
-    font-size: 3vw;
+    font-size: 20px; /* 3vw */
     margin: 0 auto;
     padding: 5px;
 }

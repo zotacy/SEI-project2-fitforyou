@@ -24,12 +24,13 @@
 
     <!-- Delete Profile -->
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
-      <input type="submit" value="Delete User" />
+      <input type="submit" value="Delete Profile" />
     </form>
 
     <br/>
     <a href="/">Back to Homepage</a><br/>
-    <a href="/logout">Log Out</a>
+    <a href="/logout">Log Out</a><br/>
+    <a href="/users/newWorkout">New Workout</a>
   </header>
 
   <main>
@@ -38,14 +39,14 @@
           <div class="row">
           <div class="column">
               <div class="card">
-                  <a href="https://imgur.com/7z8ah4B" alt="Blue Shoes"><img src="https://i.imgur.com/7z8ah4B.png?1" title="source: imgur.com" /></a>
+                <a href="/users/showWorkout"><img src="https://i.imgur.com/7z8ah4B.png?1" title="source: imgur.com"  alt="Blue Shoes"/></a>
                   <h2>Running</h2>
                   <div class="container">
                       <p class='diffCount'>Easy:</p>
                       <p class='diffCount'>Moderate:</p>
                       <p class='diffCount'>Hard:</p>
                   </div>
-                  <a class="button" href="/newWorkout"><button type="button">Add New Workout</button></a>
+                  <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
               </div>
           </div>
           </div>
@@ -55,14 +56,14 @@
           <div class="row">
           <div class="column">
               <div class="card">
-                  <a href="https://imgur.com/jXWvolq" alt="QR Bike (black)"><img src="https://i.imgur.com/jXWvolq.png?1" title="source: imgur.com" /></a>
+                <a href="/users/showWorkout"><img src="https://i.imgur.com/jXWvolq.png?1" title="source: imgur.com" alt="QR Bike (black)"/></a>
                   <h2>Cycling</h2>
                   <div class="container">
                       <p class='diffCount'>Easy:</p>
                       <p class='diffCount'>Moderate:</p>
                       <p class='diffCount'>Hard:</p>
                   </div>
-                  <a class="button" href="/newWorkout"><button type="button">Add New Workout</button></a>
+                  <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
               </div>
           </div>
           </div>
@@ -72,14 +73,14 @@
           <div class="row">
           <div class="column">
               <div class="card">
-                  <a href="https://imgur.com/3vX9a3N" alt="Swimming Pool"><img src="https://i.imgur.com/3vX9a3N.jpg?1" title="source: imgur.com" /></a>
+                  <a href="/users/showWorkout"><img src="https://i.imgur.com/3vX9a3N.jpg?1" title="source: imgur.com" alt="Swimming Pool" /></a>
                   <h2>Swimming</h2>
                   <div class="container">
                       <p class='diffCount'>Easy:</p>
                       <p class='diffCount'>Moderate:</p>
                       <p class='diffCount'>Hard:</p>
                   </div>
-                  <a class="button" href="/newWorkout"><button type="button">Add New Workout</button></a>
+                  <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
               </div>
           </div>
         </div>

@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 
 const UserModel = require("../models").User;
+const ExerciseModel = require("../models").Exercise;
+const WorkoutModel = require("../models").Workout;
 
 // GET USERS PROFILE
 router.get("/profile/:id", (req, res) => {
@@ -29,6 +31,17 @@ router.delete('/profile/:id', (req,res)=>{
         console.log(req.params.id);
         res.redirect('/')
     });
+});
+// ---------------- USER LINKS ---------------------- //
+//GET NEW WOROKOUT
+router.get("/newWorkout", (req, res) => {
+  console.log('blaahhhhhh')
+    res.render("newWorkout.ejs");
+});
+
+//GET WORKOUT
+router.get("/showWorkout", (req, res) => {
+  res.render("showWorkout.ejs");
 });
 
 //LISTEN
