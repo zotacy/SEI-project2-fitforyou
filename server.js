@@ -5,8 +5,6 @@ const methodOverride = require("method-override");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 
-// make change
-
 const verifyToken = (req, res, next) => {
   let token = req.cookies.jwt;
   // COOKIE PARSER GIVES YOU A .cookies PROP, WE NAMED OUR TOKEN jwt
@@ -36,6 +34,7 @@ app.get("/", (req, res) => {
 
 app.use("/auth", require("./controllers/authController.js"));
 app.use("/users", require("./controllers/usersController.js")); 
+app.use("/workout", require("./controllers/workoutController.js")); 
 
 var port = process.env.PORT || 3000;
 app.listen(port,()=>{
