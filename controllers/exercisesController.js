@@ -13,6 +13,7 @@ router.get("/exercise/:id", (req, res) => {
     });
   });
 });
+
 // GET USERS 
 router.get("/exercise/:id", (req, res) => {
   console.log(req.exercise);
