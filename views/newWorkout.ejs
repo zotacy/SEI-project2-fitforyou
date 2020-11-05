@@ -12,29 +12,21 @@
         <h1>New Workout</h1>
         <form class='newWorkoutForm' action="/users/showWorkout" method="POST" id="newEntryScreen">
             <label for='activity_name'>Title</label><br/>
-            <textarea placeholder="Title your workout"></textarea>
-
-            <label for="exerciseId">Exercise Type</label>
+            <textarea name="activity_name" placeholder="Title your workout"></textarea>
+            
+            <label for="exerciseId">Exercise Type</label><br/>
             <select id="exerciseId" name="exerciseId">
-                <% for (let i=0; i<exercise.length; i++) { let selected = ( i == 0
-                    ) ? "selected" : "";%>
-                <option value="<%=exercises[i].id%>" <%= selected %>> <%= exercises[i].name %> </option>
+                <% for (let i=0; i<exercises.length; i++) { %>
+                    <% let selected = ( i == 0) ? "selected" : "";%>
+                        <option value="<%=exercises[i].id%>" <%= selected %>> <%= exercises[i].name %> </option>
                 <% } %>
-            </select>
-        
-            <label for="difficultyId">Difficulty</label>
-            <select id="difficultyId" name="difficultyId">
-                <% for (let i=0; i<difficulties.length; i++) { let selected = ( i == 0
-                    ) ? "selected" : "";%>
-                <option value="<%=difficulties[i].id%>" <%= selected %>> <%= difficulties[i].rating_name %> </option>
-                <% } %>
-            </select>
+            </select><br/>
         
             <label for='activity_description'>Description</label><br/>
-            <textarea placeholder="What was your workout?"></textarea>
+            <textarea name="activity_description"placeholder="What was your workout?"></textarea>
         
             <label for='activity_notes'>Additional Notes</label><br/>
-            <textarea placeholder="How did it go? Add special notes here..."></textarea>
+            <textarea name="activity_notes" placeholder="How did it go? Add special notes here..."></textarea>
         
             <br/>
             <!-- Submit Button -->

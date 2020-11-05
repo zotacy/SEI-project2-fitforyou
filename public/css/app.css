@@ -3,6 +3,7 @@ body {
     flex-direction: column;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto;
+    margin-bottom:40px;
 }
 
 header{
@@ -31,6 +32,13 @@ footer{
     background-size: cover;
     width: 100%;
     padding: 10px;
+    position: fixed;
+    height: 40px;
+
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
 }
 #footer{
     margin:0;

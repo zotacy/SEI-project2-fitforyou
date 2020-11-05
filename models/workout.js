@@ -6,8 +6,10 @@ module.exports = (sequelize, DataTypes) => {
   class Workout extends Model {
     static associate(models) {
       Workout.belongsTo(models.Exercise, {
+        through: 'UserExercises',
         foreignKey:"exerciseId",
         foreignKey:"userId",
+        forgeignKey:"workoutId",
       });
       Workout.hasOne(models.Difficulty, {
         through: "WorkoutDifficulty",
@@ -16,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Workout.init({
-    activy_name: DataTypes.STRING,
+    activity_name: DataTypes.STRING,
     exerciseId: DataTypes.INTEGER,
     difficultyId: DataTypes.INTEGER,
     activity_description: DataTypes.STRING,

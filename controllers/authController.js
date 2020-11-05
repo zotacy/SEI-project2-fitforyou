@@ -5,7 +5,6 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models").User;
-const Exercise = require("../models").Exercise;
 
 // SIGN OUT ROUTE
 router.get("/logout", (req, res) => {
