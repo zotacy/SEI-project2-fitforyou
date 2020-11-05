@@ -1,7 +1,11 @@
 const workouts = [
     {
         name: '',
-        addToPage: false,
+        exerciseId,
+        difficultyId,
+        workout: '',
+        notes: '',
+
     },
 ];
 

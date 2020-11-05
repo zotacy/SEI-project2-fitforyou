@@ -7,7 +7,6 @@ const WorkoutModel = require("../models").Workout;
 
 // GET USERS PROFILE
 router.get("/profile/:id", (req, res) => {
-  // console.log(req.user);
   UserModel.findByPk(req.params.id).then((userProfile) => {
     res.render("users/profile.ejs", {
       user: userProfile,
@@ -35,7 +34,6 @@ router.delete('/profile/:id', (req,res)=>{
 // ---------------- USER LINKS ---------------------- //
 //GET NEW WOROKOUT
 router.get("/newWorkout", (req, res) => {
-  console.log('blaahhhhhh')
     res.render("newWorkout.ejs");
 });
 

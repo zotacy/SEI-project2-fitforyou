@@ -12,3 +12,24 @@ input {
 .no-outline:focus {
     outline: none;
 }
+
+#idCheck{
+    font-size:20px;
+    color: greenyellow;
+    background: green;
+    width: 200px;
+    position:fixed;
+    margin-left:15%;
+}
+#name{
+    width:283px;
+    margin-left:5px;
+}
+#username{
+    width:240px;
+    margin-left:5px;
+}
+#bio{
+    width:305px;
+    margin-left:5px;
+}

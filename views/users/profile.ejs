@@ -13,10 +13,17 @@
     
     <!-- Profile info -->
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
-      Name:<input type="text" name="name" value="<%=user.name%>" /><br/>
-      Username:<input type="text" name="username" value="<%=user.username%>" /><br/>
+      Name:<input id='name' type="text" name="name" value="<%=user.name%>" /><br/>
+      Username:<input id='username' type="text" name="username" value="<%=user.username%>" /><br/>
       Bio:<input id='bio' class="no-outline" type="text" name="bio" value="<%=user.bio%>" /><br />
-      <br />
+      <br/>
+      <div id="idCheck">
+        <% if (user.loggedIn === true) { %>
+          <%= user.name %> is logged in.
+            <% } else { %>
+          <%= user.name %> is NOT logged in.
+        <% } %>
+      </div>
       <!-- Edit Profile -->
       <input type="submit" value="Edit Profile" />
 

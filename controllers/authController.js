@@ -33,6 +33,7 @@ router.post("/signup", (req, res) => {
             {
               username: newUser.username,
               id: newUser.id,
+              loggedIn: true,
             },
             process.env.JWT_SECRET,
             {
@@ -71,6 +72,7 @@ router.post("/login", (req, res) => {
             {
               username: foundUser.username,
               id: foundUser.id,
+              loggedIn:true,
             },
             process.env.JWT_SECRET,
             {
