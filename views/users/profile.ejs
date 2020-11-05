@@ -37,19 +37,17 @@
     <br/>
     <a href="/">Back to Homepage</a><br/>
     <a href="/logout"><input type="hidden" name="loggedIn" value="false"/>Log Out</a><br/>
-    <a href="/users/profile/<%=user.id%>/newWorkout">New Workout</a>
+    <a href="/users/profile/<%=user.id%>/workouts/newWorkout">New Workout</a>
   </header>
 
   <main>
-    
-
     <div class="exercises">
       <!-- Exercise Blocks  -->
       <div class="exerciseBlock">
         <div class="row">
         <div class="column">
           <div class="card">
-            <a href="/users/showWorkout"><img src="https://i.imgur.com/7z8ah4B.png?1" title="source: imgur.com"  alt="Blue Shoes"/></a>
+            <a href="/users/profile/<%=user.id%>/workouts"><img src="https://i.imgur.com/7z8ah4B.png?1" title="source: imgur.com"  alt="Blue Shoes"/></a>
               <h2>Running</h2>
               <div class="container">
                   <p class='diffCount'>Easy:</p>
@@ -66,7 +64,7 @@
         <div class="row">
         <div class="column">
           <div class="card">
-            <a href="/users/showWorkout"><img src="https://i.imgur.com/jXWvolq.png?1" title="source: imgur.com" alt="QR Bike (black)"/></a>
+            <a href="/users/profile/<%=user.id%>/workouts"><img src="https://i.imgur.com/jXWvolq.png?1" title="source: imgur.com" alt="QR Bike (black)"/></a>
               <h2>Cycling</h2>
               <div class="container">
                   <p class='diffCount'>Easy:</p>
@@ -83,7 +81,7 @@
         <div class="row">
         <div class="column">
           <div class="card">
-              <a href="/users/showWorkout"><img src="https://i.imgur.com/3vX9a3N.jpg?1" title="source: imgur.com" alt="Swimming Pool" /></a>
+              <a href="/users/profile/<%=user.id%>/workouts"><img src="https://i.imgur.com/3vX9a3N.jpg?1" title="source: imgur.com" alt="Swimming Pool" /></a>
               <h2>Swimming</h2>
               <div class="container">
                   <p class='diffCount'>Easy:</p>
@@ -100,7 +98,7 @@
         <div class="row">
         <div class="column">
             <div class="card">
-              <a href="/users/showWorkout"><img src="https://i.imgur.com/ogtgrUi.png" title="source: imgur.com" alt="Triathlon Symbol" /></a>
+              <a href="/users/profile/<%=user.id%>/workouts"><img src="https://i.imgur.com/ogtgrUi.png" title="source: imgur.com" alt="Triathlon Symbol" /></a>
               <h2>Triathlon</h2>
               <div class="container">
                   <p class='diffCount'>Easy:</p>
