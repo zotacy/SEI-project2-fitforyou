@@ -59,6 +59,13 @@ input {
     margin:1px;
     width:100%;
 }
+.newWorkout #submit{
+    margin-top:20px;
+    margin-left: 40%;
+    padding:2px;
+    width:20%;
+    border-radius:10px;
+}
 /* New Account */
 .newAccountBody{
     background: white;
@@ -85,4 +92,11 @@ input {
     margin:1px;
     width:100%;
     margin-bottom:5px;
+}
+.newAccount #submit{
+    margin-top:20px;
+    margin-left: 40%;
+    padding:2px;
+    width:15%;
+    border-radius:10px;
 }

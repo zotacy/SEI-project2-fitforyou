@@ -10,20 +10,20 @@
 <body class='newWorkoutBody'>
     <main class='newWorkout'>
         <h1>New Workout</h1>
-        <form class='newWorkoutForm' action="/users/profile/showWorkout" method="POST" id="newEntryScreen">
+        <form class='newWorkoutForm' action="/users/showWorkout" method="POST" id="newEntryScreen">
             <label for='activity_name'>Title</label><br/>
             <textarea placeholder="Title your workout"></textarea>
 
-            <label for='exerciseId'>Exercise Type</label>
-            <select name="exerciseId">
-                <% for (let i=0; i<exercises.length; i++) { let selected = ( i == 0
+            <label for="exerciseId">Exercise Type</label>
+            <select id="exerciseId" name="exerciseId">
+                <% for (let i=0; i<exercise.length; i++) { let selected = ( i == 0
                     ) ? "selected" : "";%>
                 <option value="<%=exercises[i].id%>" <%= selected %>> <%= exercises[i].name %> </option>
                 <% } %>
             </select>
         
-            <label for='difficultyId'>Difficulty</label>
-            <select name="difficultyId">
+            <label for="difficultyId">Difficulty</label>
+            <select id="difficultyId" name="difficultyId">
                 <% for (let i=0; i<difficulties.length; i++) { let selected = ( i == 0
                     ) ? "selected" : "";%>
                 <option value="<%=difficulties[i].id%>" <%= selected %>> <%= difficulties[i].rating_name %> </option>

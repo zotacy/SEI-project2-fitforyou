@@ -11,11 +11,11 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      addToPage: {
-        type: Sequelize.BOOLEAN
-      },
       userId: {
         type: Sequelize.INTEGER
+      },
+      addToPage: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,
