@@ -12,26 +12,25 @@
         <h1>New Workout</h1>
         <form class='newWorkoutForm' action="/users/profile/<%=user.id%>/workouts" method="POST" id="newEntryScreen">
             <label for='activity_name'>Title</label><br/>
-            <textarea name="activity_name" placeholder="Title your workout"></textarea>
+            <textarea name="activity_name"><%=workout.activity_name%></textarea>
             
             <label for="exerciseId">Exercise Type</label><br/>
             <select id="exerciseId" name="exerciseId">
                 <% for (let i=0; i<exercises.length; i++) { %>
                     <% let selected = ( i == 0) ? "selected" : "";%>
-                        <option value="<%=exercises[i].id%>" <%= selected %>> <%= exercises[i].name %> </option>
+                        <option value="<%=exercises[i].id%>" <%= selected %>> <%=workout.exerciseId.name%> </option>
                 <% } %>
             </select><br/>
         
             <label for='activity_description'>Description</label><br/>
-            <textarea name="activity_description"placeholder="What was your workout?"></textarea>
+            <textarea name="activity_description"><%=workout.activity_description%></textarea>
         
             <label for='activity_notes'>Additional Notes</label><br/>
-            <textarea name="activity_notes" placeholder="How did it go? Add special notes here..."></textarea>
-            
-            <input type="hidden" name="userId" value="<%=user.id%>"/>
+            <textarea name="activity_notes"><%=workout.activity_notes%></textarea>
+        
             <br/>
             <!-- Submit Button -->
-            <input type="submit" name="" value="Submit Workout"/>
+            <a href="/workout/<%=workout.id; %>/edit">Edit Workout</a>
         </form>
     </main>
 </body>

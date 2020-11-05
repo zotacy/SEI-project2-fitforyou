@@ -55,14 +55,14 @@ router.get("/profile/:id/workouts/newWorkout", (req, res) => {
   });
 });
 
-//POST ==> CREATES EXERCISE
+//POST ==> CREATES WORKOUT
 router.post('/profile/:id/workouts', (req,res)=> {
-  Exercise.create(req.body).then((newExercise) => { 
+  Workout.create(req.body).then((newWorkout) => { 
     res.redirect(`/users/profile/${req.params.id}/workouts`) 
   });
 });
 
-//GET SHOW WORKOUT
+//GET SHOW WORKOUT PAGE
 router.get("/profile/:id/workouts", (req, res) => {
   User.findByPk(req.params.id, {
     include: [{model: Workout}],
@@ -72,6 +72,15 @@ router.get("/profile/:id/workouts", (req, res) => {
         workouts: allWorkouts,
         user: singleUser,
       });
+    });
+  });
+});
+
+//GET SPECIFIC WORKOUTS
+router.get("/workouts/:id", (req, res) => {
+  Workout.findByPk(req.params.id).then((selectWorkout) =>{
+    res.render("showWorkout.ejs", {
+      workout: selectWorkout,
     });
   });
 });

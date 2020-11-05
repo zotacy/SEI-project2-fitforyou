@@ -10,14 +10,17 @@
 <body>
     <header>
     <h1>Workout Listings</h1>
-    <a href="http://localhost:3000/users/profile/<%=user.id%>">Return to Profile</a>
+    <a href="/users/profile/<%=user.id%>">Return to Profile</a>
     </header>
-    <ul>
-    <% for(let i=0; i<workouts.length; i++) { %>
-        <li>
-            <a href="/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
-        </li>
-        <% } %>
-    </ul>
+
+    <main>
+        <ul>
+        <% for(let i=0; i<workouts.length; i++) { %>
+            <li>
+                <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+            </li>
+            <% } %>
+        </ul>
+    </main>
 </body>
 </html>
