@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     difficultyId: DataTypes.INTEGER
   }, {
     sequelize,
-    modelName: 'workoutDifficulty',
+    modelName: 'WorkoutDifficulty',
   });
   return WorkoutDifficulty;
 };

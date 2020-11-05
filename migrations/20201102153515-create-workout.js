@@ -8,7 +8,7 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      activity_name: {
         type: Sequelize.STRING
       },
       exerciseId: {
@@ -17,10 +17,10 @@ module.exports = {
       difficultyId: {
         type: Sequelize.INTEGER
       },
-      workout: {
+      activity_description: {
         type: Sequelize.STRING
       },
-      notes: {
+      activity_notes: {
         type: Sequelize.STRING
       },
       createdAt: {

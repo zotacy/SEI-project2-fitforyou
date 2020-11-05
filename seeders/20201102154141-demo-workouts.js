@@ -6,11 +6,11 @@ module.exports = {
       "Workouts",
       [
         {
-          name: "First Run Workout",
+          activity_name: "First Run Workout",
           exerciseId: "1",
           difficultyId: "1",
-          workout: "easy run, 30 minutes",
-          notes: "Keep it EASY",
+          activity_description: "easy run, 30 minutes",
+          activity_notes: "Keep it EASY",
         },
       ],
       {}

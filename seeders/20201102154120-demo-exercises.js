@@ -7,8 +7,8 @@ module.exports = {
       [
         {
           name: "Run",
-          addToPage: true,
           userId:1,
+          addToPage: true,
           createdAt: new Date(),
           updatedAt: new Date(),
         },

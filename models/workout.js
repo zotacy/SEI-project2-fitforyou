@@ -16,11 +16,11 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Workout.init({
-    name: DataTypes.STRING,
+    activy_name: DataTypes.STRING,
     exerciseId: DataTypes.INTEGER,
     difficultyId: DataTypes.INTEGER,
-    workout: DataTypes.STRING,
-    notes: DataTypes.STRING
+    activity_description: DataTypes.STRING,
+    activity_notes: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Workout',

@@ -6,15 +6,15 @@ module.exports = {
       "Difficulties",
       [
         {
-          name: "Easy",
+          rating_name: "Easy",
           rating: 1
         },
         {
-          name: "Moderate",
+          rating_name: "Moderate",
           rating: 2
         },
         {
-          name: "Hard",
+          rating_name: "Hard",
           rating: 3
         },
       ],

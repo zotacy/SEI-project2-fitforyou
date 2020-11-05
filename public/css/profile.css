@@ -33,3 +33,29 @@ input {
     width:305px;
     margin-left:5px;
 }
+/* New Workout CSS */
+.newWorkoutBody{
+    background: white;
+}
+.newWorkout{
+    background: lightblue;
+    display:flex;
+    justify-content:center;
+    margin:0 auto;
+    margin-top:20%;
+    flex-direction:column;
+    width:50%;
+
+    border: 5px solid darkgrey;
+    border-radius: 10px;
+    padding: 10px;
+
+}
+.newWorkout h1{
+    margin-top:0
+}
+
+.newWorkout textarea{
+    margin:1px;
+    width:100%;
+}

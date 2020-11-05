@@ -12,8 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     };
   };
   Difficulty.init({
-    name: DataTypes.STRING,
-    rating: DataTypes.INTEGER
+    rating_name: DataTypes.STRING,
+    rating: DataTypes.INTEGER,
   }, {
     sequelize,
     modelName: 'Difficulty',

@@ -16,8 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   };
   Exercise.init({
     name: DataTypes.STRING,
+    userId: DataTypes.INTEGER,
     addToPage: DataTypes.BOOLEAN,
-    userId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Exercise',
