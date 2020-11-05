@@ -17,13 +17,13 @@
       Username:<input id='username' type="text" name="username" value="<%=user.username%>" /><br/>
       Bio:<input id='bio' class="no-outline" type="text" name="bio" value="<%=user.bio%>" /><br />
       <br/>
-      <div id="idCheck">
+      <!-- <div id="idCheck">
         <% if (user.loggedIn === true) { %>
           <%= user.name %> is logged in.
             <% } else { %>
           <%= user.name %> is NOT logged in.
         <% } %>
-      </div>
+      </div> -->
       <!-- Edit Profile -->
       <input type="submit" value="Edit Profile" />
 
@@ -36,7 +36,7 @@
 
     <br/>
     <a href="/">Back to Homepage</a><br/>
-    <a href="/logout"><input type="hidden" name="loggedIn" value="false"/>Log Out</a><br/>
+    <!-- <a href="/logout"><input type="hidden" name="loggedIn" value="false"/>Log Out</a><br/> -->
     <a href="/users/profile/<%=user.id%>/workouts/newWorkout">New Workout</a>
   </header>
 
@@ -54,7 +54,7 @@
                   <p class='diffCount'>Moderate:</p>
                   <p class='diffCount'>Hard:</p>
               </div>
-              <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
+              <a class="button" href="/users/profile/<%=user.id%>/workouts/newWorkout"><button type="button">Add New Workout</button></a>
           </div>
         </div>
         </div>
@@ -71,7 +71,7 @@
                   <p class='diffCount'>Moderate:</p>
                   <p class='diffCount'>Hard:</p>
               </div>
-              <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
+              <a class="button" href="/users/profile/<%=user.id%>/workouts/newWorkout"><button type="button">Add New Workout</button></a>
           </div>
         </div>
         </div>
@@ -88,7 +88,7 @@
                   <p class='diffCount'>Moderate:</p>
                   <p class='diffCount'>Hard:</p>
               </div>
-              <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
+              <a class="button" href="/users/profile/<%=user.id%>/workouts/newWorkout"><button type="button">Add New Workout</button></a>
           </div>
         </div>
         </div>
@@ -105,7 +105,7 @@
                   <p class='diffCount'>Moderate:</p>
                   <p class='diffCount'>Hard:</p>
               </div>
-              <a class="button" href="/users/newWorkout"><button type="button">Add New Workout</button></a>
+              <a class="button" href="/users/profile/<%=user.id%>/workouts/newWorkout"><button type="button">Add New Workout</button></a>
             </div>
           </div>
         </div>
