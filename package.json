@@ -1,0 +1,39 @@
+{
+  "name": "sei-project2-fitforyou",
+  "version": "1.0.0",
+  "description": "Fit For You App",
+  "main": "exercises.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "forms": "^1.3.2",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "mysql": "^2.18.1",
+    "pg": "^8.4.2",
+    "sequelize": "^6.3.5",
+    "sequelize-cli": "^6.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zotacy/SEI-project2-fitforyou.git"
+  },
+  "keywords": [
+    "fitness"
+  ],
+  "author": "Zach Tacy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zotacy/SEI-project2-fitforyou/issues"
+  },
+  "homepage": "https://github.com/zotacy/SEI-project2-fitforyou#readme"
+}
