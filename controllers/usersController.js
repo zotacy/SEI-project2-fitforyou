@@ -42,26 +42,28 @@ router.get("/logout", (req, res) => {
 
 // ---------------- USER LINKS ---------------------- //
 //GET NEW WORKOUT FORM
-router.get("/newWorkout", (req, res) => {
+router.get("/profile/:id/newWorkout", (req, res) => {
   User.findByPk(req.params.id, {
       include: [{model: Exercise}],
-  }).then((singleUser) =>{
+  }).then((singleUser) => {
       Exercise.findAll().then((allExercises) => {
         res.render("newWorkout.ejs", {
           exercises: allExercises,
+          user: singleUser,
       });
     });
   });
 });
+
 //GET SHOW WORKOUT
 router.get("/showWorkout", (req, res) => {
   res.render("showWorkout.ejs")
 });
 
-//POST ==> CREATES NEW WORKOUT
-router.post('/showWorkout', (req,res)=> {
-    Workout.create(req.body).then((newWorkout) => { 
-      res.redirect(`/users/showWorkout`) 
+//POST ==> CREATES EXERCISE
+router.post('/profile/:id', (req,res)=> {
+    Exercise.create(req.body).then((newExercise) => { 
+      res.redirect(`/users/profile/${req.params.id}`) 
     });
 });
 
@@ -71,7 +73,7 @@ router.put('/:id', (req, res) => { //:id of workout to edit in workout array
       where: {id: req.params.id},
       returning: true,
   }).then((user)=>{
-      res.redirect(`/users/profile/$${req.params.id}`); 
+      res.redirect(`/users/profile/${req.params.id}`); 
   });   
 });
 

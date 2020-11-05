@@ -37,10 +37,12 @@
     <br/>
     <a href="/">Back to Homepage</a><br/>
     <a href="/logout"><input type="hidden" name="loggedIn" value="false"/>Log Out</a><br/>
-    <a href="/users/newWorkout">New Workout</a>
+    <a href="/users/profile/<%=user.id%>/newWorkout">New Workout</a>
   </header>
 
   <main>
+    
+
     <div class="exercises">
       <!-- Exercise Blocks  -->
       <div class="exerciseBlock">

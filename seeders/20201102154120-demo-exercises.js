@@ -20,7 +20,7 @@ module.exports = {
           updatedAt: new Date(),
         },
         {
-          name: "Traiathlon",
+          name: "Triathlon",
           createdAt: new Date(),
           updatedAt: new Date(),
         },

@@ -9,11 +9,12 @@
 
 <body>
     <h1>Workout Listings</h1>
-    <!-- Easy -->
-        <!-- showing workouts with difficulty = easy -->
-    <!-- Moderate -->
-        <!-- showing workouts with difficulty = moderate -->
-    <!-- Hard -->
-        <!-- showing workouts with difficulty = hard-->
+    <ul>
+    <% for(let i=0; i<workouts.length; i++) { %>
+        <li>
+            <a href="/workouts/<%=workouts[i].id%>"> <%=workouts[i].activity_name%> </a>
+        </li>
+        <% } %>
+    </ul>
 </body>
 </html>

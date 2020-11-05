@@ -10,7 +10,7 @@
 <body class='newWorkoutBody'>
     <main class='newWorkout'>
         <h1>New Workout</h1>
-        <form class='newWorkoutForm' action="/users/showWorkout" method="POST" id="newEntryScreen">
+        <form class='newWorkoutForm' action="/users/profile/<%=user.id%>" method="POST" id="newEntryScreen">
             <label for='activity_name'>Title</label><br/>
             <textarea name="activity_name" placeholder="Title your workout"></textarea>
             
