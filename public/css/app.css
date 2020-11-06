@@ -53,6 +53,11 @@ input[type="submit"]{
     font-size:15px;
     border-radius:10px;
 }
+#submit{
+    max-width:150px;
+    font-size:15px;
+    border-radius:10px;
+}
 /* ----------- Exercise Block ----------------*/
 .exercises{
     display:grid;
