@@ -14,15 +14,34 @@ header{
     background-size: cover;
     padding: 10px;
     margin: 0;
-    width:100%;
     border-bottom: 10px solid darkgrey;
 }
-h1.userHome{
+#headerNav{
+    padding:10px;
+    float:right;
+    border: 3px solid darkblue;
+    border-radius: 10px;
+    vertical-align: bottom;
+}
+#headerNav form{
+    justify-content: right;
+}
+/* #headerNav form{
+    display:flex;
+    flex-direction:column;
+    max-width: 300px;
+    max-height: 300px;
+    justify-content: right;
+} */
+.userHome h1{
+    float:left;
     font-size: 60px;
     color: darkblue;
     -webkit-text-stroke: blue;
     -webkit-text-stroke-width: 2px;
+    /* vertical-align: bottom; */
     margin: 0 auto;
+    margin-top: 85px;
 }
 .userHome-form{
     justify-content:right;

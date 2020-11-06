@@ -10,7 +10,7 @@
 <body class='WorkoutBody'>
     <main class='Workout'>
         <h1><%=workouts.activity_name%></h1>
-        <form class='workoutForm' action="/users/profile/workouts/<%=workouts.id%>" method="POST">
+        <form class='workoutForm' action="/users/profile/<%=user.id%>/workouts/<%=workouts.id%>?_method=PUT" method="POST">
             <label for='activity_name'>Title</label><br/>
             <textarea name="activity_name"><%=workouts.activity_name%></textarea><br/>
             
@@ -25,10 +25,10 @@
             <!-- Submit Button -->
             <input id="submit" type="submit" name="" value="Edit"/>
             <br/>
-            <form action="/users/profile/workouts/<%=workouts.id%>?_method=DELETE" method="POST">
+        </form>
+            <form action="/users/profile/<%=user.id%>/workouts/<%=workouts.id%>?_method=DELETE" method="POST">
                 <input id="submit" type="submit" value="Delete" />
             </form>
-        </form>
     </main>
 
     <footer>

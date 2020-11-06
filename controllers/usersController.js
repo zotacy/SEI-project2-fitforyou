@@ -62,7 +62,7 @@ router.post('/profile/:id/workouts', (req,res)=> {
   });
 });
 
-//GET SHOW WORKOUT PAGE
+//GET WORKOUTS PAGE
 router.get("/profile/:id/workouts", (req, res) => {
   User.findByPk(req.params.id, {
     include: [{model: Workout}],
@@ -78,11 +78,13 @@ router.get("/profile/:id/workouts", (req, res) => {
 
 //GET SPECIFIC WORKOUTS
 router.get("/profile/:id/workouts/:id", (req, res) => {
-  User.findByPk(req.params.id, {
-    include: [{model: Workout}],
+  Workout.findByPk(req.params.id, {
+    where: {id:req.params.id},
+    include: [{model: User, attributes: ["id"]}],
+  }).then((workoutId) => {
+    User.findByPk(2, {
+      where: {id:req.params.id},
     }).then((userId) => {
-    Workout.findByPk(req.params.id).then((workoutId) =>{
-      // console.log('workoutId', workoutId)
       res.render("showWorkout.ejs", {
         workouts: workoutId,
         user: userId
@@ -92,14 +94,20 @@ router.get("/profile/:id/workouts/:id", (req, res) => {
 });
 
 //EDIT WORKOUT
-router.put("/profile/:id/workouts/:id", (req, res) => { //:id of workout to edit in workout array
-  console.log("re.params", req.params.id)
-  Workout.update(req.body, { //in our users array, find the id specified in the url (:index).  Set that element to the value of req.body (the input data)  
-    where: {id: req.params.id},
-      returning: true,
-  }).then((user)=>{
-      console.log("re.params", req.params.id),
-      res.redirect(`/profile/:id/workouts`); 
+router.put("/profile/:userId/workouts/:workoutId", (req, res) => { 
+  // console.log("READING EDIT", req.params.userId)
+  // console.log("READING EDIT", req.params.workoutId)
+  User.findByPk(req.params.userId, {
+    include: [{model: Workout}],
+    attributes: ["id"],
+  }).then((userId) => {
+    Workout.update(req.body, { 
+      where: {id: req.params.workoutId},
+        returning: true,
+    }).then((user)=>{
+      // sending back with updated view
+        res.redirect('back');
+    });
   });   
 });
 

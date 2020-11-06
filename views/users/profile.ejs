@@ -8,10 +8,10 @@
     <title>User Profile</title>
 </head>
 <body>
-  <header>
+  <header class="userProfile">
     <h1><%= user.name %>'s Profile</h1>
-    
     <!-- Profile info -->
+    <nav id="headerNav">
     <form action="/users/profile/<%=user.id%>?_method=PUT" method="POST">
       Name:<input id='name' type="text" name="name" value="<%=user.name%>" /><br/>
       Username:<input id='username' type="text" name="username" value="<%=user.username%>" /><br/>
@@ -26,14 +26,13 @@
       </div> -->
       <!-- Edit Profile -->
       <input type="submit" value="Edit Profile" />
-
     </form>
 
     <!-- Delete Profile -->
     <form action="/users/<%= user.id %>?_method=DELETE" method="POST">
       <input type="submit" value="Delete Profile" />
     </form>
-
+  </nav>
     <br/>
     <a href="/">Back to Homepage</a><br/>
     <!-- <a href="/logout"><input type="hidden" name="loggedIn" value="false"/>Log Out</a><br/> -->
