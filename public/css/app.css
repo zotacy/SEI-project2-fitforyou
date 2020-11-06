@@ -49,8 +49,9 @@ footer{
 }
 /* --------- Sign-in/Sign-up block ----------*/
 input[type="submit"]{
-    max-width:text;
+    max-width:150px;
     font-size:15px;
+    border-radius:10px;
 }
 /* ----------- Exercise Block ----------------*/
 .exercises{
