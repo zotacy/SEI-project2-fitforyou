@@ -10,6 +10,9 @@ Project Links
    - Heroku: https://dashboard.heroku.com/apps/fitforyou
    - GitHub Repo: https://github.com/zotacy/SEI-project2-fitforyou
 
+Wireframes
+   Lucid Chart (SQL Tables)- https://lucid.app/invitations/accept 94634b63-8457-43fe-bb32-4273a89c122a
+
 Technologies Used
 - Javascript, CSS
 - MVC Organization
@@ -28,9 +31,6 @@ User Stories:
 9. I want to be able to connect with other users and share workouts (STRETCH GOAL).
 10. I want to be able to make my account public or private (STRETCH GOAL).
 
-Wireframes
-   Lucid Chart (SQL Tables)- https://lucid.app/invitations/accept 94634b63-8457-43fe-bb32-4273a89c122a
-
 MVP
    - Routes: Homepage, User Profile; create new Workout, view Workouts, edit workouts.
    - Render data each page and route
@@ -41,6 +41,7 @@ PostMVP
    - Add storage & security for user account
    - Accounts can be private/public (anyone can see public workouts, eventually request friends, etc.)
    - Improve how workouts and exercises are routed and organized on the page. Add functionality for when and how they appear.
+      - add script.js to public foler, add eventlisteners to divs in profile, make wokrout divs have default: display:none. When exercise category is clicked from profile page, the exercise div in workouts gets turned on and user is taken to workouts where they can now see the workouts for the exercise type clicked.
    - Improve CSS Styling
    - Add workout count to each category for easy, moderate, hard
 

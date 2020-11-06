@@ -3,13 +3,14 @@ header{
 }
 #title{
     float:left;
-    font-size: 30px;
+}
+#title h1{
+    font-size: 50px;
     color: darkblue;
     /* -webkit-text-stroke: blue; */
     -webkit-text-stroke-width: 1px;
-    /* vertical-align: bottom; */
     margin: 0 auto;
-    margin-top:-30px;
+    margin-bottom: 10px;
 }
 #title a{
     font-size: 20px;
@@ -23,6 +24,7 @@ input {
     border: hidden;
     background-color: none;
     font-size: .9em;
+    margin:1px;
 }
 .no-outline:focus {
     outline: none;
@@ -38,14 +40,21 @@ input {
 #name{
     width:283px;
     margin-left:5px;
+    border-radius: 5px;
+    padding-left: 5px;
+    
 }
 #username{
     width:240px;
     margin-left:5px;
+    border-radius: 5px;
+    padding-left: 5px;
 }
 #bio{
     width:305px;
     margin-left:5px;
+    border-radius: 5px;
+    padding-left: 5px;
 }
 /* New Workout CSS */
 .WorkoutBody{
