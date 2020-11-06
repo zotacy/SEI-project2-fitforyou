@@ -36,6 +36,7 @@ app.use("/auth", require("./controllers/authController.js"));
 app.use("/users", require("./controllers/usersController.js")); 
 app.use("/workout", require("./controllers/workoutController.js")); 
 
+//LISTEN
 var port = process.env.PORT || 3000;
 app.listen(port,()=>{
     console.log("listening");

@@ -45,11 +45,11 @@ router.get("/logout", (req, res) => {
 router.get("/profile/:id/workouts/newWorkout", (req, res) => {
   User.findByPk(req.params.id, {
       include: [{model: Exercise}],
-  }).then((singleUser) => {
+  }).then((userId) => {
       Exercise.findAll().then((allExercises) => {
         res.render("newWorkout.ejs", {
           exercises: allExercises,
-          user: singleUser,
+          user: userId,
       });
     });
   });
@@ -66,37 +66,43 @@ router.post('/profile/:id/workouts', (req,res)=> {
 router.get("/profile/:id/workouts", (req, res) => {
   User.findByPk(req.params.id, {
     include: [{model: Workout}],
-  }).then((singleUser) => {
+  }).then((userId) => {
     Workout.findAll().then((allWorkouts) => {
       res.render("workouts.ejs", {
         workouts: allWorkouts,
-        user: singleUser,
+        user: userId,
       });
     });
   });
 });
 
 //GET SPECIFIC WORKOUTS
-router.get("/workouts/:id", (req, res) => {
-  Workout.findByPk(req.params.id).then((selectWorkout) =>{
-    res.render("showWorkout.ejs", {
-      workout: selectWorkout,
+router.get("/profile/:id/workouts/:id", (req, res) => {
+  User.findByPk(req.params.id, {
+    include: [{model: Workout}],
+    }).then((userId) => {
+    Workout.findByPk(req.params.id).then((workoutId) =>{
+      console.log('workoutId', workoutId)
+      res.render("showWorkout.ejs", {
+        workouts: workoutId,
+        user: userId
+      });
     });
   });
 });
 
 //EDIT WORKOUT
-router.put('/:id', (req, res) => { //:id of workout to edit in workout array
+router.put("/profile/:id/workouts/:id", (req, res) => { //:id of workout to edit in workout array
   Workout.update(req.body, { //in our users array, find the id specified in the url (:index).  Set that element to the value of req.body (the input data)
       where: {id: req.params.id},
       returning: true,
   }).then((user)=>{
-      res.redirect(`/users/profile/${req.params.id}`); 
+      res.redirect(`/profile/:id/workouts`); 
   });   
 });
 
 //DELETE WORKOUT
-router.delete('/:id', (req,res)=>{
+router.delete("/profile/:id/workouts/:id", (req,res)=>{
   Workout.destroy({ where: {id: req.params.id} }).then(() => {
       console.log(req.params.id);
       res.redirect(`/users/profile/${req.params.id}`)

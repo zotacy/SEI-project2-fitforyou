@@ -5,32 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/app.css"/>
     <link rel="stylesheet" href="/css/profile.css"/>
-    <title>New Workout</title>
+    <title>Entry:<%=workouts.activity_name%></title>
 </head>
-<body class='newWorkoutBody'>
-    <main class='newWorkout'>
-        <h1>New Workout</h1>
-        <form class='newWorkoutForm' action="/users/profile/<%=user.id%>/workouts" method="POST" id="newEntryScreen">
+<body class='WorkoutBody'>
+    <main class='Workout'>
+        <h1><%=workouts.activity_name%></h1>
+        <form class='WorkoutForm' action="/users/profile/<%=user.id%>/workouts/<%=workouts.id%>" method="POST">
             <label for='activity_name'>Title</label><br/>
-            <textarea name="activity_name"><%=workout.activity_name%></textarea>
+            <textarea name="activity_name"><%=workouts.activity_name%></textarea><br/>
             
-            <label for="exerciseId">Exercise Type</label><br/>
-            <select id="exerciseId" name="exerciseId">
-                <% for (let i=0; i<exercises.length; i++) { %>
-                    <% let selected = ( i == 0) ? "selected" : "";%>
-                        <option value="<%=exercises[i].id%>" <%= selected %>> <%=workout.exerciseId.name%> </option>
-                <% } %>
-            </select><br/>
         
             <label for='activity_description'>Description</label><br/>
-            <textarea name="activity_description"><%=workout.activity_description%></textarea>
+            <textarea name="activity_description"><%=workouts.activity_description%></textarea><br/>
         
             <label for='activity_notes'>Additional Notes</label><br/>
-            <textarea name="activity_notes"><%=workout.activity_notes%></textarea>
+            <textarea name="activity_notes"><%=workouts.activity_notes%></textarea><br/>
         
-            <br/>
             <!-- Submit Button -->
-            <a href="/workout/<%=workout.id; %>/edit">Edit Workout</a>
+            <input id="submit" type="submit" name="" value="Edit Workout"/>
+            <br/>
+            <form action="/users/profile/<%=user.id%>/workouts/<%=workouts.id%>?_method=DELETE" method="POST">
+                <input id="submit" type="submit" value="Delete Workout" />
+            </form>
         </form>
     </main>
 </body>
