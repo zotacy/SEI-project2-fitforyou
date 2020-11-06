@@ -1,64 +1,67 @@
 Fit For You App
 
-REQUIREMENTS- Project 2
-A README.md file with explanations of the technologies used, the approach was taken, unsolved problems, user stories, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc. Inside Your README.md:
-   - Check this file for a README template
-   - Include at least 10 User Stories
-   - Include wireframes that you designed during the planning process
-   - Have a link to your hosted working app in the README.md file in your github repo
-User Stories:
+REQUIREMENTS- Project 2- Fit For You
+A README.md file with explanations of the technologies used, the approach was taken, unsolved problems, user stories, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc. Inside Your 
+
+Goal: Fit For You is an app for athletes! With Fit For You, people will be able to create a personal profile where they can keep track of workouts that they create. These workouts will be organized by their categories to make them easy to find. Eventually people will be able to share thier workouts with a close group of friends also on the app.
 
 Project Links
-   - github repo
-   - deployment
+   - Deployed: https://fitforyou.herokuapp.com/
+   - Heroku: https://dashboard.heroku.com/apps/fitforyou
+   - GitHub Repo: https://github.com/zotacy/SEI-project2-fitforyou
+
+Technologies Used
+- Javascript, CSS
+- MVC Organization
+- Node.js, Express.js, Postgres/ Sequelize
+- GitHub/Git, Heroku
+
+User Stories:
+1. I want to have an understanding of what the web-app is about on the homepage.
+2. I want to be able to create an account.
+3. I want to be able to login/logout of my account.
+4. When logged in, I want to be able to make new workouts.
+5. When logged in I want to be able to view my workouts.
+6. When logged in I want to be able to edit/delete my information and my workout information.
+7. I want my information organized so that I can access it easily and by category.
+8. I want the UI to be fluid and know where information is stored without needing additional directions.
+9. I want to be able to connect with other users and share workouts (STRETCH GOAL).
+10. I want to be able to make my account public or private (STRETCH GOAL).
+
 Wireframes
-   - Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
    Lucid Chart (SQL Tables)- https://lucid.app/invitations/accept 94634b63-8457-43fe-bb32-4273a89c122a
 
-wireframes
-   - react architecture
-   - Define the the React components and the architectural design of your app.
+MVP
+   - Routes: Homepage, User Profile; create new Workout, view Workouts, edit workouts.
+   - Render data each page and route
+   - Basic functionalities to create and account, create workouts and access workouts.
+   - Basic CSS styling.
 
-MVP/PostMVP - 5min
-   - The functionality will then be divided into two separate lists: MPV and PostMVP.
-   - Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.
+PostMVP
+   - Add storage & security for user account
+   - Accounts can be private/public (anyone can see public workouts, eventually request friends, etc.)
+   - Improve how workouts and exercises are routed and organized on the page. Add functionality for when and how they appear.
+   - Improve CSS Styling
 
-MVP EXAMPLE
-   - Find and use external api
-   - Render data on page
-   - Allow user to interact with the page
-
-PostMVP EXAMPLE
-   - Add localStorage or firebase for storage
-    Components
-   - Writing out your components and its descriptions isn't a required part of the proposal but can be helpful.
-   - Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components.
-
-Component    Description
-    App    This will make the initial data pull and include React Router
-    Header    This will render the header include the nav
-    Footer    This will render the header include the nav
-
-Time Frames
-   -  Time frames are also key in the development cycle. You have limited time to code all phases of the game. Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
-
-Component    Priority    Estimated Time    Time Invetsted    Actual Time
-    Adding Form    H    3hrs    3.5hrs    3.5hrs
-    Working with API    H    3hrs    2.5hrs    2.5hrs
-    Total    H    6hrs    5hrs    5hrs
 
 Additional Libraries
    - Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc.
 
 Code Snippet
-   - Use this section to include a brief code snippet of functionality that you are proud of an a brief description. Code snippet should not be greater than 10 lines of code.
+- Code snippet used to create one of the boxes that store workouts in workouts.ejs
+<div class= workoutItems>
+   <h3>Running</h3>
+   <% for(let i=0; i<workouts.length; i++) { %>
+         <% if (workouts[i].exerciseId === 1) { %>
+         <li>
+            <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+         </li>
+         <% } %>
+   <% } %>
+</div>
 
-function reverse(string) {
-    // here is the code to reverse a string of text
-}
 Issues and Resolutions
-    Use this section to list of all major issues encountered and their resolution.
-
+    
 SAMPLE.....
     ERROR: app.js:34 Uncaught SyntaxError: Unexpected identifier
     RESOLUTION: Missing comma after first object in sources {} object
