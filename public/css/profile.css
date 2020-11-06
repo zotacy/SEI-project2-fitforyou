@@ -1,4 +1,7 @@
-header h1{
+header{
+    padding: 10px;
+}
+#title{
     float:left;
     font-size: 30px;
     color: darkblue;
@@ -6,7 +9,10 @@ header h1{
     -webkit-text-stroke-width: 1px;
     /* vertical-align: bottom; */
     margin: 0 auto;
-    margin-top: 85px;
+    margin-top:-30px;
+}
+#title a{
+    font-size: 20px;
 }
 /* Profile Info Form */
 form{

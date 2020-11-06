@@ -77,14 +77,12 @@ router.get("/profile/:id/workouts", (req, res) => {
 });
 
 //GET SPECIFIC WORKOUTS
-router.get("/profile/:id/workouts/:id", (req, res) => {
-  Workout.findByPk(req.params.id, {
-    where: {id:req.params.id},
-    include: [{model: User, attributes: ["id"]}],
-  }).then((workoutId) => {
-    User.findByPk(2, {
-      where: {id:req.params.id},
+router.get("/profile/:userId/workouts/:workoutId", (req, res) => {
+    User.findByPk(req.params.userId, {
+      include: [{model: Workout}],
+      attributes: ["id"],
     }).then((userId) => {
+      Workout.findByPk(req.params.workoutId).then((workoutId) => {
       res.render("showWorkout.ejs", {
         workouts: workoutId,
         user: userId
@@ -105,18 +103,17 @@ router.put("/profile/:userId/workouts/:workoutId", (req, res) => {
       where: {id: req.params.workoutId},
         returning: true,
     }).then((user)=>{
-      // sending back with updated view
+      // Sending back with updated view
         res.redirect('back');
     });
   });   
 });
 
 //DELETE WORKOUT
-router.delete("/profile/:id/workouts/:id", (req,res)=>{
-  console.log("delete", req.params.id),
-  Workout.destroy({ where: {id: req.params.id} }).then(() => {
-      console.log(req.params.id);
-      res.redirect(`/users/profile/${req.params.id}`)
+router.delete("/profile/:userId/workouts/:workoutId", (req,res)=>{
+  Workout.destroy({ where: {id: req.params.workoutId} }).then(() => {
+      console.log("DESTROYED");
+      res.redirect(`/users/profile/${req.params.userId}/workouts`)
   });
 });
 

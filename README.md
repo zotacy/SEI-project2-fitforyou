@@ -49,20 +49,22 @@ Additional Libraries
    - Use this section to list all supporting libraries and thier role in the project such as Axios, ReactStrap, D3, etc.
 
 Code Snippet
-- Code snippet used to create one of the boxes that store workouts in workouts.ejs
-<div class= workoutItems>
-   <h3>Running</h3>
-   <% for(let i=0; i<workouts.length; i++) { %>
-         <% if (workouts[i].exerciseId === 1) { %>
-         <li>
-            <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
-         </li>
-         <% } %>
-   <% } %>
-</div>
+- Code snippet from authController.js used to edit workouts. Utilizes chained id's and redirect using re.redirect('back') whic return the user to the showWorkout view with the updated information.
 
-Issues and Resolutions
-    
-SAMPLE.....
-    ERROR: app.js:34 Uncaught SyntaxError: Unexpected identifier
-    RESOLUTION: Missing comma after first object in sources {} object
+//EDIT WORKOUT
+router.put("/profile/:userId/workouts/:workoutId", (req, res) => { 
+  User.findByPk(req.params.userId, {
+    include: [{model: Workout}],
+    attributes: ["id"],
+  }).then((userId) => {
+    Workout.update(req.body, { 
+      where: {id: req.params.workoutId},
+        returning: true,
+    }).then((user)=>{
+      // Sending back with updated view
+        res.redirect('back');
+    });
+  });   
+});
+
+
