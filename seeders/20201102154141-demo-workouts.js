@@ -5,11 +5,11 @@ module.exports = {
       "Workouts",
       [
         {
-          activity_name: "First Run Workout",
+          activity_name: "Example: Easy Run Workout",
           exerciseId: "1",
           difficultyId: "1",
-          activity_description: "easy run, 30 minutes",
-          activity_notes: "Keep it EASY",
+          activity_description: "Easy run, 30 minutes.",
+          activity_notes: "Keep it EASY.",
           userId: "1",
         },
       ],

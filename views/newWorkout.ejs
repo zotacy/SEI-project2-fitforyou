@@ -21,6 +21,8 @@
                         <option value="<%=exercises[i].id%>" <%= selected %>> <%= exercises[i].name %> </option>
                 <% } %>
             </select><br/>
+
+            <!-- Add difficulties -->
         
             <label for='activity_description'>Description</label><br/>
             <textarea name="activity_description"placeholder="What was your workout?"></textarea>
@@ -34,6 +36,10 @@
             <input id="submit" type="submit" name="" value="Submit Workout"/>
         </form>
     </main>
+
+    <footer>
+        <p id="footer">© 2020 Zach Tacy</p>
+    </footer>
 </body>
 </html>
 

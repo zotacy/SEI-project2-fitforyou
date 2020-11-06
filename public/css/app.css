@@ -1,3 +1,6 @@
+html {
+    box-sizing: border-box;
+}
 body {
     display:flex;
     flex-direction: column;
@@ -5,7 +8,6 @@ body {
     margin: 0 auto;
     margin-bottom:40px;
 }
-
 header{
     /* text-align: center; */
     background-color: lightblue;
@@ -13,6 +15,7 @@ header{
     padding: 10px;
     margin: 0;
     width:100%;
+    border-bottom: 10px solid darkgrey;
 }
 h1.userHome{
     font-size: 60px;
@@ -44,63 +47,50 @@ footer{
     margin:0;
     margin-right: 20px;
 }
-
-html {
-    box-sizing: border-box;
-}
-/* Sign-in/Sign-up block */
+/* --------- Sign-in/Sign-up block ----------*/
 input[type="submit"]{
     max-width:text;
     font-size:15px;
 }
-
-/* Exercise Block */
+/* ----------- Exercise Block ----------------*/
 .exercises{
     display:grid;
     grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
     padding: 10px;
     /* border: 5px solid Blue; */
 }
-
 *, *:before, *:after {
 box-sizing: inherit;
 }
-
 .column {
     float: left;
     width: 100%;
     margin-bottom: 16px;
     padding: 0 8px;
 }
-
 .card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     margin: 8px;
     text-align: center;
 }
-
 .card img{
     width:100%;
     height:auto;
 }
-
 h2{
     font-size: 20px; /* 3vw */
     margin: 0 auto;
     padding: 5px;
 }
-
 .container {
     padding: -5px 8px;
     display:flex;
     justify-content: space-evenly;
 }
-
 .diffCount {
     color: grey;
     display: inline-block;
 }
-
 .button {
     border: none;
     outline: 0;
@@ -112,11 +102,10 @@ h2{
     cursor: pointer;
     width:100%;
 }
-
 .button:hover {
     background-color: #555;
 }
-
+/* Media */
 @media screen and (max-width: 650px) {
     .exercises{
         grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));

@@ -1,0 +1,71 @@
+
+html {
+    box-sizing: border-box;
+}
+body {
+    display:flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    margin-bottom:40px;
+}
+header{
+    /* text-align: center; */
+    background-color: lightblue;
+    background-size: cover;
+    padding: 10px;
+    margin: 0;
+    width:100%;
+    border-bottom: 10px solid darkgrey;
+}
+footer{
+    text-align: right;
+    color:white;
+    background-color: grey;
+    background-size: cover;
+    width: 100%;
+    padding: 10px;
+    position: fixed;
+    height: 40px;
+
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+#footer{
+    margin:0;
+    margin-right: 20px;
+}
+/* --------- Sign-in/Sign-up block ----------*/
+input[type="submit"]{
+    max-width:text;
+    font-size:15px;
+}
+/* ----------- Show Workout Page ------------ */
+.workoutList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(30%, 1fr));
+    padding: 10px;
+}
+.workoutList h3{
+    margin: 0;
+}
+.workoutItems{
+    justify-content: space-around;
+    padding:10px;
+    width:90%;
+    margin:0 auto;
+    margin-bottom: 16px;
+    border: 5px solid darkgrey;
+    border-radius:15px;
+}
+*, *:before, *:after {
+box-sizing: inherit;
+}
+/* Media */
+@media screen and (max-width: 650px) {
+    .exercises{
+        grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+    }
+}

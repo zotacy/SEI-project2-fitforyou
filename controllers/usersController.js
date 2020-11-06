@@ -27,7 +27,7 @@ router.put('/profile/:id', (req, res) => { //:index is the index of our users ar
 });
 
 //DELETE USER PROFILE
-router.delete('/profile/:id', (req,res)=>{
+router.delete('/:id', (req,res)=>{
     User.destroy({ where: {id: req.params.id} }).then(() => {
         console.log(req.params.id);
         res.redirect('/')
@@ -82,7 +82,7 @@ router.get("/profile/:id/workouts/:id", (req, res) => {
     include: [{model: Workout}],
     }).then((userId) => {
     Workout.findByPk(req.params.id).then((workoutId) =>{
-      console.log('workoutId', workoutId)
+      // console.log('workoutId', workoutId)
       res.render("showWorkout.ejs", {
         workouts: workoutId,
         user: userId
@@ -93,16 +93,19 @@ router.get("/profile/:id/workouts/:id", (req, res) => {
 
 //EDIT WORKOUT
 router.put("/profile/:id/workouts/:id", (req, res) => { //:id of workout to edit in workout array
-  Workout.update(req.body, { //in our users array, find the id specified in the url (:index).  Set that element to the value of req.body (the input data)
-      where: {id: req.params.id},
+  console.log("re.params", req.params.id)
+  Workout.update(req.body, { //in our users array, find the id specified in the url (:index).  Set that element to the value of req.body (the input data)  
+    where: {id: req.params.id},
       returning: true,
   }).then((user)=>{
+      console.log("re.params", req.params.id),
       res.redirect(`/profile/:id/workouts`); 
   });   
 });
 
 //DELETE WORKOUT
 router.delete("/profile/:id/workouts/:id", (req,res)=>{
+  console.log("delete", req.params.id),
   Workout.destroy({ where: {id: req.params.id} }).then(() => {
       console.log(req.params.id);
       res.redirect(`/users/profile/${req.params.id}`)

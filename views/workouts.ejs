@@ -3,24 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/app.css"/>
+    <link rel="stylesheet" href="/css/workout.css"/>
     <title>Workouts</title>
 </head>
 
 <body>
     <header>
-    <h1>Workout Listings</h1>
-    <a href="/users/profile/<%=user.id%>">Return to Profile</a>
+        <h1>Workout Listings</h1>
+        <a href="/users/profile/<%=user.id%>">Return to Profile</a><br/>
+        <a href="/users/profile/<%=user.id%>/workouts/newWorkout">New Workout</a>
     </header>
 
-    <main>
-        <ul>
-        <% for(let i=0; i<workouts.length; i++) { %>
-            <li>
-                <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
-            </li>
+    <main class="workoutList">
+        <div class= workoutItems>
+            <h3>Running</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 1) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
             <% } %>
-        </ul>
+        </div>
+        <div class= workoutItems>
+            <h3>Cycling</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 2) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Swimming</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 3) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Triathlon</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 4) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Weight Lifting</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 5) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Cardio</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 6) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Cross Fit</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 7) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Climbing</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 8) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
+        <div class= workoutItems>
+            <h3>Yoga</h3>
+            <% for(let i=0; i<workouts.length; i++) { %>
+                <% if (workouts[i].exerciseId === 9) { %>
+                <li>
+                    <a href="/users/profile/<%=user.id%>/workouts/<%=workouts[i].id%>"> <%= workouts[i].activity_name %> </a>
+                </li>
+                <% } %>
+            <% } %>
+        </div>
     </main>
+
+    <footer>
+        <p id="footer">© 2020 Zach Tacy</p>
+    </footer>
 </body>
 </html>
