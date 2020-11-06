@@ -42,6 +42,7 @@ PostMVP
    - Accounts can be private/public (anyone can see public workouts, eventually request friends, etc.)
    - Improve how workouts and exercises are routed and organized on the page. Add functionality for when and how they appear.
    - Improve CSS Styling
+   - Add workout count to each category for easy, moderate, hard
 
 
 Additional Libraries
