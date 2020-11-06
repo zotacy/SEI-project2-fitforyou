@@ -26,9 +26,11 @@
             <input id="submit" type="submit" name="" value="Edit"/>
             <br/>
         </form>
-            <form action="/users/profile/<%=user.id%>/workouts/<%=workouts.id%>?_method=DELETE" method="POST">
-                <input id="submit" type="submit" value="Delete" />
-            </form>
+        <form action="/users/profile/<%=user.id%>/workouts/<%=workouts.id%>?_method=DELETE" method="POST">
+            <input id="submit" type="submit" value="Delete" />
+        </form>
+        <br/>
+        <a href="/users/profile/<%=user.id%>/workouts">Back to Workouts</a>
     </main>
 
     <footer>
